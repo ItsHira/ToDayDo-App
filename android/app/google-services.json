@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "433513263298",
+    "project_id": "todayto-baa35",
+    "storage_bucket": "todayto-baa35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433513263298:android:adae01d86303ea10d2cb5b",
+        "android_client_info": {
+          "package_name": "com.example.fi_as3_hira"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433513263298-1tse4cn9fk605jheke2on244gravinm8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbccgi8Ni9EuFGRT6YzhMie4TnGO69xjs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433513263298-1tse4cn9fk605jheke2on244gravinm8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "433513263298-2tojptd6upaditmu1ifbflssb7723pvb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fiAs3Hira.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
