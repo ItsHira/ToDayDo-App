@@ -5,9 +5,7 @@ class UpdateData {
       FirebaseFirestore.instance.collection('data');
   void updateDataToFirestore(String id, String text) async {
     try {
-      await _usersCollection.doc(id).update({'work': text});
-
-      print('updated');
+      await _usersCollection.doc(id).update({'work': text});    
     } catch (e) {
       rethrow;
     }

@@ -1,6 +1,7 @@
 import 'package:fi_as3_hira/constants/fi_as3_hira_spaces.dart';
-import 'package:fi_as3_hira/servies/fi_as3_hira_delete_data.dart';
-import 'package:fi_as3_hira/servies/fi_as3_hira_update_data.dart';
+import 'package:fi_as3_hira/services/firebase_delete_data.dart';
+import 'package:fi_as3_hira/services/firebase_update_data.dart';
+
 
 import 'package:flutter/material.dart';
 

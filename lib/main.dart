@@ -1,4 +1,4 @@
-import 'package:fi_as3_hira/screens/login/fi_as3_hira_login.dart';
+import 'package:fi_as3_hira/screens/login/login.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 

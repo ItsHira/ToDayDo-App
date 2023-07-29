@@ -1,8 +1,8 @@
 import 'package:fi_as3_hira/constants/fi_as3_hira_spaces.dart';
-import 'package:fi_as3_hira/screens/login/fi_as3_hira_login.dart';
-import 'package:fi_as3_hira/screens/home/widgets/fi_as3_hira_action_button.dart';
-import 'package:fi_as3_hira/screens/home/widgets/fi_as3_hira_datalist.dart';
-import 'package:fi_as3_hira/screens/home/widgets/fi_as3_hira_header.dart';
+import 'package:fi_as3_hira/screens/login/login.dart';
+import 'package:fi_as3_hira/screens/home/widgets/action_button.dart';
+import 'package:fi_as3_hira/screens/home/widgets/datalist.dart';
+import 'package:fi_as3_hira/screens/home/widgets/header.dart';
 import 'package:flutter/material.dart';
 
 class H1Home extends StatefulWidget {

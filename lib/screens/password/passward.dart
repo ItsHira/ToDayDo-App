@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/fi_as3_hira_spaces.dart';
-import '../../widgets/core/fi_as3_hira_button.dart';
-import '../../widgets/core/fi_as3_hira_textfield.dart';
-import '../login/fi_as3_hira_login.dart';
+import '../../widgets/core/button.dart';
+import '../../widgets/core/textfield.dart';
+import '../login/login.dart';
 
 class H1Password extends StatelessWidget {
   const H1Password({super.key});

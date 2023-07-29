@@ -1,7 +1,7 @@
+import 'package:fi_as3_hira/services/firebase_read_data.dart';
 import 'package:flutter/material.dart';
 
-import '../../../servies/fi_as3_hira_read_data.dart';
-import '../../../widgets/designs/fi_as3_hira_checkbox.dart';
+import '../../../widgets/designs/checkbox.dart';
 
 class DataList extends StatefulWidget {
   const DataList({super.key});
@@ -11,7 +11,6 @@ class DataList extends StatefulWidget {
 }
 
 class _DataListState extends State<DataList> {
-  // String work = "";
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -36,8 +35,7 @@ class _DataListState extends State<DataList> {
                 itemBuilder: (context, index) {
                   final user = users[index].data();
                   final user1 = users[index];
-                  // final user2 = users[index].data().values.elementAt(0);
-                  // print(user2);
+
                   return Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: ListTile(
