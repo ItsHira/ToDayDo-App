@@ -1,7 +1,7 @@
 import 'package:fi_as3_hira/constants/fi_as3_hira_spaces.dart';
 import 'package:fi_as3_hira/widgets/core/fi_as3_hira_button.dart';
 import 'package:fi_as3_hira/widgets/core/fi_as3_hira_textfield.dart';
-import 'package:fi_as3_hira/screens/fi_as3_hira_login.dart';
+import 'package:fi_as3_hira/screens/login/fi_as3_hira_login.dart';
 import 'package:flutter/material.dart';
 
 class H1SignUp extends StatelessWidget {

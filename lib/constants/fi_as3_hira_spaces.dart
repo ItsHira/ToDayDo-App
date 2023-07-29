@@ -20,4 +20,6 @@ class Spaces {
   static const w30 = SizedBox(width: 30);
   static const w35 = SizedBox(width: 35);
   static const w40 = SizedBox(width: 40);
+  static const w45 = SizedBox(width: 45);
+  static const w50 = SizedBox(width: 50);
 }

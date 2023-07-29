@@ -1,9 +1,9 @@
 import 'package:fi_as3_hira/constants/fi_as3_hira_spaces.dart';
 import 'package:fi_as3_hira/widgets/core/fi_as3_hira_button.dart';
 import 'package:fi_as3_hira/widgets/core/fi_as3_hira_textfield.dart';
-import 'package:fi_as3_hira/screens/fi_as3_hira_home.dart';
-import 'package:fi_as3_hira/screens/fi_as3_hira_passward.dart';
-import 'package:fi_as3_hira/screens/fi_as3_hira_signup.dart';
+import 'package:fi_as3_hira/screens/home/fi_as3_hira_home.dart';
+import 'package:fi_as3_hira/screens/password/fi_as3_hira_passward.dart';
+import 'package:fi_as3_hira/screens/signup/fi_as3_hira_signup.dart';
 import 'package:flutter/material.dart';
 
 class H1login extends StatelessWidget {
