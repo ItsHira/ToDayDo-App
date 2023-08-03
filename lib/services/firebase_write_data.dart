@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 class Write {
   final CollectionReference _usersCollection =
       FirebaseFirestore.instance.collection('data');
-  void addData(String name,bool check) async {
+  void addData(String name, bool check,String imageUrl) async {
     try {
+     
       await _usersCollection.add(
         {
           'work': name,
           'bool': check,
+          'image': imageUrl,
         },
       );
       debugPrint('Data stored');

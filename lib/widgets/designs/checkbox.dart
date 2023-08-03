@@ -2,7 +2,6 @@ import 'package:fi_as3_hira/constants/fi_as3_hira_spaces.dart';
 import 'package:fi_as3_hira/services/firebase_delete_data.dart';
 import 'package:fi_as3_hira/services/firebase_update_data.dart';
 
-
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -108,7 +107,8 @@ class _CheckboxExampleState extends State<CheckboxExample> {
                           MaterialButton(
                             onPressed: () {
                               task = message.text;
-                              UpdateData().updateDataToFirestore(widget.workid,task);
+                              UpdateData()
+                                  .updateDataToFirestore(widget.workid, task);
                               Navigator.pop(context);
                               setState(() {
                                 message.clear();

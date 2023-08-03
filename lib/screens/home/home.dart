@@ -25,7 +25,7 @@ class _H1HomeState extends State<H1Home> {
             Spaces.h5,
             const DataList(),
             Spaces.h40,
-            ActionButton(),
+            const ActionButton(),
             Row(
               children: [
                 Spaces.w10,
@@ -34,7 +34,7 @@ class _H1HomeState extends State<H1Home> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>H1login(),
+                        builder: (context) => const H1login(),
                       ),
                     );
                   },

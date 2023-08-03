@@ -1,17 +1,46 @@
+import 'dart:io';
+
 import 'package:fi_as3_hira/services/firebase_write_data.dart';
+import 'package:fi_as3_hira/utils/utilities.dart';
 import 'package:flutter/material.dart';
 
+import 'package:image_picker/image_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:firebase_storage/firebase_storage.dart';
 import '../../../constants/fi_as3_hira_spaces.dart';
 
 class ActionButton extends StatefulWidget {
-  
-   ActionButton({super.key});
+  const ActionButton({super.key});
 
   @override
   State<ActionButton> createState() => _ActionButtonState();
 }
 
 class _ActionButtonState extends State<ActionButton> {
+  File? _image;
+
+  final picker = ImagePicker();
+
+  firebase_storage.FirebaseStorage storage =
+      firebase_storage.FirebaseStorage.instance;
+  Reference databaseRef = FirebaseStorage.instance.ref('data');
+  String uniqueFileName = DateTime.now().microsecondsSinceEpoch.toString();
+
+  Future imageGetGallery() async {
+    final PickedFile =
+        await picker.pickImage(source: ImageSource.gallery, imageQuality: 80);
+    setState(
+      () {
+        if (PickedFile != null) {
+          _image = File(PickedFile.path);
+        } else {
+          debugPrint('no image picked');
+        }
+      },
+    );
+  }
+
+  String url = '';
   String task = "";
   TextEditingController message = TextEditingController();
 
@@ -29,7 +58,7 @@ class _ActionButtonState extends State<ActionButton> {
           ),
           builder: (BuildContext Context) {
             return SizedBox(
-              height: 400,
+              height: 600,
               width: 400,
               child: Column(
                 children: [
@@ -46,7 +75,7 @@ class _ActionButtonState extends State<ActionButton> {
                           size: 40,
                         ),
                       ),
-                      Spaces.w10,
+                      Spaces.w5,
                       SizedBox(
                         width: 230,
                         child: TextField(
@@ -62,16 +91,22 @@ class _ActionButtonState extends State<ActionButton> {
                           ),
                         ),
                       ),
+                      Spaces.w10,
                       MaterialButton(
                         onPressed: () {
                           task = message.text;
-                          Write().addData(
-                            task,false
-                          );
+                          if (url.isEmpty) {
+                            Utils().toastMessage('please upload an image');
+                            return;
+                          }
+
+                          Write().addData(task, false, url);
                           Navigator.pop(context);
-                          setState(() {
-                            message.clear();
-                          });
+                          setState(
+                            () {
+                              message.clear();
+                            },
+                          );
                         },
                         shape: const CircleBorder(),
                         color: Colors.green,
@@ -79,11 +114,45 @@ class _ActionButtonState extends State<ActionButton> {
                           child: Icon(
                             Icons.add,
                             color: Colors.white,
-                            size: 33,
+                            size: 30,
                           ),
                         ),
                       ),
                     ],
+                  ),
+                  Spaces.h25,
+                  Center(
+                    child: InkWell(
+                      onTap: () async {
+                        imageGetGallery();
+                        firebase_storage.Reference ref = firebase_storage
+                            .FirebaseStorage.instance
+                            .ref(uniqueFileName);
+                        firebase_storage.UploadTask uploadTask =
+                            ref.putFile(_image!.absolute);
+                        final snapshot = await uploadTask;
+                        final downloadUrl = await snapshot.ref.getDownloadURL();
+
+                        setState(
+                          () {
+                            url = downloadUrl;
+                          },
+                        );
+                      },
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 2, color: Colors.green),
+                        ),
+                        child: _image != null
+                            ? Image.file(_image!.absolute)
+                            : const Icon(
+                                Icons.photo,
+                                color: Colors.green,
+                              ),
+                      ),
+                    ),
                   ),
                 ],
               ),
