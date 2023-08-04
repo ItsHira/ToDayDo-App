@@ -1,4 +1,5 @@
 import 'package:fi_as3_hira/constants/fi_as3_hira_spaces.dart';
+import 'package:fi_as3_hira/services/firebase_read_data.dart';
 import 'package:fi_as3_hira/utils/utilities.dart';
 import 'package:fi_as3_hira/widgets/core/button.dart';
 import 'package:fi_as3_hira/widgets/core/textfield.dart';
@@ -50,6 +51,7 @@ class _H1loginState extends State<H1login> {
       setState(() {
         loading = false;
       });
+      UserProvider.uid = value.user!.uid;
     }).onError((error, stackTrace) {
       debugPrint(error.toString());
       Utils().toastMessage(error.toString());

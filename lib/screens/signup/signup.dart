@@ -1,4 +1,5 @@
 import 'package:fi_as3_hira/constants/fi_as3_hira_spaces.dart';
+import 'package:fi_as3_hira/services/firebase_read_data.dart';
 import 'package:fi_as3_hira/utils/utilities.dart';
 import 'package:fi_as3_hira/widgets/core/button.dart';
 import 'package:fi_as3_hira/widgets/core/textfield.dart';
@@ -44,6 +45,9 @@ class _H1SignUpState extends State<H1SignUp> {
       setState(() {
         loading = false;
       });
+      String uid = value.user!.uid;
+      UserProvider.uid = value.user!.uid;
+      print('this is uid $uid');
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const H1login()),

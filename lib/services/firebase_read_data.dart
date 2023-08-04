@@ -5,21 +5,17 @@ import 'package:flutter/material.dart';
 class UserProvider {
   static final _firestore = FirebaseFirestore.instance;
   static const userCollection = ServicesConstants.usersCollection;
+  static String uid = '';
 
-  static Future<List<Map<String, dynamic>>> getData() async {
-    try {
-      final users = await _firestore.collection(userCollection).get();
-      return users.docs.map((user) => user.data()).toList();
-    } catch (e) {
-      debugPrint(e.toString());
-      rethrow;
-    }
-  }
+  final users = _firestore.collection(userCollection).doc(uid).get();
+
 
   static Stream<QuerySnapshot<Map<String, dynamic>>> fetchUser() {
     try {
       return _firestore
           .collection(userCollection)
+          .doc(uid)
+          .collection('todo')
           .snapshots()
           .asBroadcastStream();
     } catch (e) {

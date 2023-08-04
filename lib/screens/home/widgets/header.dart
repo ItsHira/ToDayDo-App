@@ -4,7 +4,7 @@ import '../../../constants/fi_as3_hira_spaces.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
-
+ 
   @override
   Widget build(BuildContext context) {
     return const Column(
@@ -23,6 +23,7 @@ class Header extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          
         ),
         Row(
           children: [

@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:fi_as3_hira/services/firebase_write_data.dart';
-import 'package:fi_as3_hira/utils/utilities.dart';
 import 'package:flutter/material.dart';
 
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:firebase_storage/firebase_storage.dart';
 import '../../../constants/fi_as3_hira_spaces.dart';
+import '../../../utils/utilities.dart';
 
 class ActionButton extends StatefulWidget {
   const ActionButton({super.key});
@@ -18,6 +18,7 @@ class ActionButton extends StatefulWidget {
 
 class _ActionButtonState extends State<ActionButton> {
   File? _image;
+  bool loading = false;
 
   final picker = ImagePicker();
 
@@ -168,3 +169,4 @@ class _ActionButtonState extends State<ActionButton> {
     );
   }
 }
+
