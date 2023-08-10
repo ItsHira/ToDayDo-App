@@ -4,12 +4,15 @@ class H1Button extends StatelessWidget {
   final VoidCallback onPressed;
   final Color color;
   final Widget child;
+  final bool loading;
   const H1Button(
       {super.key,
       required this.child,
       required this.onPressed,
-      required this.color});
+      required this.color,
+      this.loading = false});
 
+      
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -24,7 +27,12 @@ class H1Button extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: Center(
-          child: child,
+          child: loading
+              ? const CircularProgressIndicator(
+                  strokeWidth: 3,
+                  color: Colors.white,
+                )
+              : child,
         ),
       ),
     );
